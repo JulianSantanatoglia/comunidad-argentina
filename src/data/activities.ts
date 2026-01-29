@@ -1,0 +1,43 @@
+import type { Activity } from '../types';
+
+export const activities: Activity[] = [
+  {
+    id: '1',
+    title: 'Asado Comunitario',
+    slug: 'asado-comunitario',
+    category: 'integracion',
+    date: '2024-02-15',
+    time: '13:00',
+    location: 'A definir por la asociación',
+    price: 10,
+    description: 'Asado comunitario para compartir y conocernos. Traé tu plato y bebida.',
+    excerpt: 'Asado comunitario para compartir y conocernos.',
+    contactMethod: 'whatsapp',
+  },
+  {
+    id: '2',
+    title: 'Taller de Tango',
+    slug: 'taller-de-tango',
+    category: 'cultura',
+    date: '2024-02-20',
+    time: '19:00',
+    location: 'A definir por la asociación',
+    price: 'gratis',
+    description: 'Taller de tango para principiantes. No se requiere experiencia previa.',
+    excerpt: 'Taller de tango para principiantes.',
+    contactMethod: 'both',
+  },
+  {
+    id: '3',
+    title: 'Partido Los Gauchos',
+    slug: 'partido-los-gauchos',
+    category: 'deporte',
+    date: '2024-02-18',
+    time: '11:00',
+    location: 'A definir por la asociación',
+    price: 'gratis',
+    description: 'Vení a alentar a Los Gauchos en su próximo partido de la Liga ADAC.',
+    excerpt: 'Vení a alentar a Los Gauchos en su próximo partido.',
+    contactMethod: 'whatsapp',
+  },
+];
