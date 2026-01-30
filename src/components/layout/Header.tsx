@@ -41,7 +41,7 @@ export const Header = () => {
               />
             </Link>
           </div>
-          
+
           <div className="flex items-center gap-8">
             <nav className="hidden md:flex md:items-center md:space-x-6">
               {navItems.map((item) => (

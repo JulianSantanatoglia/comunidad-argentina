@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, Music } from 'lucide-react';
+import { Mail, Phone, Instagram, Music, Heart } from 'lucide-react';
 import { siteConfig } from '../../constants/siteConfig';
 import { Button } from '../ui/Button';
 
@@ -108,12 +108,26 @@ export const Footer = () => {
           {/* CTAs */}
           <div>
             <h3 className="text-white font-semibold mb-4">Participá</h3>
-            <div className="space-y-3">
-              <Button asChild size="sm" className="w-full">
+            <div className="space-y-2">
+              <Button 
+                asChild 
+                size="sm" 
+                className="w-full text-xs py-1.5 h-8"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
                 <Link to="/socios">Hacerse Socio</Link>
               </Button>
-              <Button asChild variant="secondary" size="sm" className="w-full bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white border-0 shadow-md shadow-blue-500/30 hover:shadow-lg hover:shadow-blue-500/40 transition-all duration-300">
-                <Link to="/donaciones">Donar</Link>
+              <Button 
+                asChild 
+                variant="secondary" 
+                size="sm" 
+                className="w-full bg-red-600 hover:bg-red-700 text-white border-0 shadow-md shadow-red-500/30 hover:shadow-lg hover:shadow-red-500/40 transition-all duration-300 text-xs py-1.5 h-8"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                <Link to="/donaciones">
+                  <Heart className="h-3 w-3 mr-1 fill-white" />
+                  Donar ♥
+                </Link>
               </Button>
             </div>
           </div>

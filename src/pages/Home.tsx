@@ -152,7 +152,7 @@ export const Home = () => {
       </section>
 
       {/* Sobre Nosotros y Objetivos */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="pt-24 pb-12 bg-white relative overflow-hidden">
         {/* Patrón de fondo sutil */}
         <div 
           className="absolute inset-0 opacity-[0.02]"
@@ -163,7 +163,7 @@ export const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div>
             {/* La Asociación */}
-            <div className="mb-16 max-w-3xl">
+            <div className="mb-8 max-w-3xl">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 <span className="text-gray-900">La</span>{' '}
                 <span className="text-blue-600">Asociación</span>
@@ -186,7 +186,7 @@ export const Home = () => {
       </section>
 
       {/* Próximas actividades */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="pt-12 pb-20 bg-white relative overflow-hidden">
         {/* Patrón de fondo sutil */}
         <div 
           className="absolute inset-0 opacity-[0.02]"
@@ -333,15 +333,15 @@ export const Home = () => {
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
                 ¿Querés ser socio de nuestra comunidad?
-              </h2>
+                </h2>
               <div className="h-1 w-20 bg-gradient-to-r from-sky-400 to-blue-600 mx-auto mb-6"></div>
               <p className="text-lg md:text-xl mb-4 text-gray-700">
                 Mirá las ventajas de formar parte de nuestra familia
-              </p>
+                </p>
               <p className="text-xl md:text-2xl font-semibold text-blue-600 italic">
                 ¡Somos Familia!
               </p>
-            </div>
+                  </div>
 
             <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200/50 shadow-lg mb-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900 text-center">
@@ -351,7 +351,7 @@ export const Home = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Acceso prioritario a eventos de la asociación</p>
-                </div>
+                  </div>
                 <div className="flex items-start gap-3">
                   <Gift className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Descuentos exclusivos en comercios adheridos</p>
@@ -359,15 +359,15 @@ export const Home = () => {
                 <div className="flex items-start gap-3">
                   <Heart className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Sorteos y regalos especiales</p>
-                </div>
+              </div>
                 <div className="flex items-start gap-3">
                   <BookOpen className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Cursos y talleres de interés</p>
-                </div>
+                      </div>
                 <div className="flex items-start gap-3">
                   <Scale className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Respaldo legal y jurídico gratuito</p>
-                </div>
+                  </div>
                 <div className="flex items-start gap-3">
                   <Headphones className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Apoyo psicológico y contención</p>
@@ -375,13 +375,13 @@ export const Home = () => {
                 <div className="flex items-start gap-3">
                   <Handshake className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Ayudas y donaciones solidarias</p>
-                </div>
+              </div>
                 <div className="flex items-start gap-3">
                   <Briefcase className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700 text-base md:text-lg">Orientación laboral y oportunidades</p>
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
 
             <div className="text-center">
               <Button
@@ -391,7 +391,7 @@ export const Home = () => {
                 className="bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 shadow-lg px-8 py-6 text-lg font-semibold"
               >
                 <Link to="/socios">¡Quiero hacerme socio!</Link>
-              </Button>
+                </Button>
               <p className="text-gray-600 mt-6 text-lg">
                 ¡Te esperamos para seguir creciendo y sentirnos en casa!
               </p>

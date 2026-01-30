@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, Instagram, Music, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, Instagram, Music, Send } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
