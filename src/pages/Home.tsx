@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Calendar, Users, Heart, Target, Handshake, Shirt, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
-import { siteConfig } from '../constants/siteConfig';
+import { Calendar, Heart, Handshake, ChevronDown, CheckCircle, Gift, BookOpen, Scale, Headphones, Briefcase } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/Card';
 import { activities } from '../data/activities';
@@ -61,25 +60,6 @@ export const Home = () => {
     startSomosFamilia ? 0 : 999999
   );
   
-  const camisetaImages = [
-    '/images/camisetas/camiseta-1.jpg',
-    '/images/camisetas/camiseta-2.jpg',
-    '/images/camisetas/camiseta-3.jpg',
-    '/images/camisetas/camiseta-4.jpg',
-  ];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % camisetaImages.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + camisetaImages.length) % camisetaImages.length);
-  };
-
-  const goToImage = (index: number) => {
-    setCurrentImageIndex(index);
-  };
 
   const renderTitle = () => {
     const highlightText = "Asociación Argentina en Almería";
@@ -132,7 +112,7 @@ export const Home = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative text-white min-h-[85vh] lg:min-h-[90vh] flex items-center">
+      <section className="relative text-white min-h-[85vh] lg:min-h-[90vh] flex items-center z-0 -mt-20">
         <div className="absolute inset-0">
           <img
             src="/images/header/header-2.png"
@@ -141,7 +121,7 @@ export const Home = () => {
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-40">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-40 pt-32">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 min-h-[1.2em]" style={{ transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)' }}>
               {renderTitle()}
@@ -182,71 +162,24 @@ export const Home = () => {
         ></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div>
-            {/* Sobre Nosotros */}
+            {/* La Asociación */}
             <div className="mb-16 max-w-3xl">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                <span className="text-gray-900">Sobre</span>{' '}
-                <span className="text-blue-600">Nosotros</span>
+                <span className="text-gray-900">La</span>{' '}
+                <span className="text-blue-600">Asociación</span>
               </h2>
-              <div className="h-1 w-20 bg-gradient-to-r from-sky-400 to-blue-600 mb-4"></div>
-              <div className="space-y-6">
+              <div className="h-1 w-20 bg-gradient-to-r from-sky-400 to-blue-600 mb-6"></div>
+              <div className="space-y-6 mb-8">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                   Somos una comunidad formada por argentinos y argentinas que viven en Almería, nacida en octubre de 2023 con el objetivo de crear un espacio de encuentro, contención y pertenencia.
                 </p>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                  Organizamos actividades culturales, sociales, deportivas y solidarias que fortalecen los lazos entre compatriotas y fomentan la integración con la sociedad local. Creemos en el trabajo en equipo, el respeto y la familia como valores fundamentales.
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Organizamos actividades culturales, sociales, deportivas y solidarias que fortalecen los lazos entre compatriotas y fomentan la integración con la sociedad local.
                 </p>
               </div>
-            </div>
-
-            {/* Objetivos */}
-            <div>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-700 mb-8">Objetivos de la Asociación</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card className="group hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-blue-500">
-                  <CardContent className="pt-6">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-100 to-sky-200 mb-4 group-hover:scale-110 transition-transform">
-                      <Target className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      <strong className="text-gray-900">Promover la cultura y las tradiciones argentinas</strong> en Almería.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="group hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-blue-500">
-                  <CardContent className="pt-6">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-100 to-sky-200 mb-4 group-hover:scale-110 transition-transform">
-                      <Handshake className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      <strong className="text-gray-900">Fomentar la integración</strong> social, cultural y deportiva de la comunidad argentina.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="group hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-blue-500">
-                  <CardContent className="pt-6">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-100 to-sky-200 mb-4 group-hover:scale-110 transition-transform">
-                      <Heart className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      <strong className="text-gray-900">Generar espacios de encuentro, apoyo y solidaridad</strong> entre socios y voluntarios.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="group hover:-translate-y-1 transition-all duration-300 border-l-4 border-l-blue-500">
-                  <CardContent className="pt-6">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-100 to-sky-200 mb-4 group-hover:scale-110 transition-transform">
-                      <Users className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      <strong className="text-gray-900">Impulsar actividades deportivas y culturales</strong> abiertas a la comunidad.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+              <Button asChild variant="outline" size="lg" className="shadow-md">
+                <Link to="/asociacion">Conocer más sobre la Asociación</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -387,9 +320,8 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Camiseta */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Patrón de fondo sutil */}
+      {/* ¿Quieres ser socio? */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-50 via-sky-50 to-white">
         <div 
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -397,141 +329,71 @@ export const Home = () => {
           }}
         ></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="text-gray-900">Camiseta</span>{' '}
-                  <span className="text-blue-600">Club Argentinos en Almería</span>
-                </h2>
-                <div className="h-1 w-20 bg-gradient-to-r from-sky-400 to-blue-600 mb-6"></div>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Llevá los colores del club con la camiseta oficial del Club Argentinos en Almería. Camiseta oficial con los colores y el escudo del equipo.
-                </p>
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <p className="text-sm text-gray-600 mb-1"><strong className="text-gray-900">Precio:</strong> A definir por la asociación</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600 mb-1"><strong className="text-gray-900">Talles:</strong> A definir por la asociación</p>
-                  </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                ¿Querés ser socio de nuestra comunidad?
+              </h2>
+              <div className="h-1 w-20 bg-gradient-to-r from-sky-400 to-blue-600 mx-auto mb-6"></div>
+              <p className="text-lg md:text-xl mb-4 text-gray-700">
+                Mirá las ventajas de formar parte de nuestra familia
+              </p>
+              <p className="text-xl md:text-2xl font-semibold text-blue-600 italic">
+                ¡Somos Familia!
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200/50 shadow-lg mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900 text-center">
+                Ser socio tiene sus ventajas:
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Acceso prioritario a eventos de la asociación</p>
                 </div>
-                <Button
-                  onClick={() => {
-                    const message = encodeURIComponent('Hola! Me interesa comprar la camiseta del Club Argentinos en Almería. ¿Podrían darme más información?');
-                    window.open(`https://wa.me/${siteConfig.contact.whatsapp.replace('+', '')}?text=${message}`, '_blank');
-                  }}
-                  size="lg"
-                  variant="primary"
-                  className="bg-gradient-to-r from-sky-400 to-blue-500 w-full md:w-auto"
-                >
-                  <Shirt className="mr-2 h-5 w-5" />
-                  Comprar por WhatsApp
-                </Button>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-full max-w-sm">
-                  {/* Slider principal */}
-                  <Card className="overflow-hidden mb-4">
-                    <CardContent className="p-0 relative group">
-                      <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-sky-100 relative">
-                        <img
-                          src={camisetaImages[currentImageIndex]}
-                          alt={`Camiseta Club Argentinos en Almería ${currentImageIndex + 1}`}
-                          className="w-full h-full object-contain transition-opacity duration-300"
-                        />
-                        {/* Botones de navegación */}
-                        <button
-                          onClick={prevImage}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110"
-                          aria-label="Imagen anterior"
-                        >
-                          <ChevronLeft className="h-5 w-5" />
-                        </button>
-                        <button
-                          onClick={nextImage}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110"
-                          aria-label="Siguiente imagen"
-                        >
-                          <ChevronRight className="h-5 w-5" />
-                        </button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  {/* Miniaturas */}
-                  <div className="grid grid-cols-4 gap-2">
-                    {camisetaImages.map((image, index) => (
-                      <button
-                        key={index}
-                        onClick={() => goToImage(index)}
-                        className={`aspect-square rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                          currentImageIndex === index
-                            ? 'border-blue-500 scale-105 shadow-md'
-                            : 'border-gray-200 hover:border-blue-300 hover:scale-105'
-                        }`}
-                        aria-label={`Ver imagen ${index + 1}`}
-                      >
-                        <img
-                          src={image}
-                          alt={`Miniatura camiseta ${index + 1}`}
-                          className="w-full h-full object-cover bg-gradient-to-br from-blue-50 to-sky-100"
-                        />
-                      </button>
-                    ))}
-                  </div>
+                <div className="flex items-start gap-3">
+                  <Gift className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Descuentos exclusivos en comercios adheridos</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Heart className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Sorteos y regalos especiales</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <BookOpen className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Cursos y talleres de interés</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Scale className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Respaldo legal y jurídico gratuito</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Headphones className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Apoyo psicológico y contención</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Handshake className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Ayudas y donaciones solidarias</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Briefcase className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 text-base md:text-lg">Orientación laboral y oportunidades</p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Newsletter */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800"></div>
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}
-        ></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                  <span>Newsletter</span>
-                </h2>
-                <div className="h-1 w-20 bg-gradient-to-r from-white/60 to-white/80 mx-auto mb-6"></div>
-                <p className="text-lg md:text-xl mb-8 text-white/90">
-                  Recibí las últimas novedades y actividades en tu email
-                </p>
-              </div>
-              <form 
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // TODO: Integrar con servicio de newsletter (Mailchimp, SendGrid, etc.)
-                  alert('TODO: Integrar con servicio de newsletter');
-                }}
-                className="flex flex-col sm:flex-row gap-4"
+            <div className="text-center">
+              <Button
+                asChild
+                size="lg"
+                variant="primary"
+                className="bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 shadow-lg px-8 py-6 text-lg font-semibold"
               >
-                <input
-                  type="email"
-                  placeholder="Tu email"
-                  className="flex-1 px-6 py-4 rounded-xl text-gray-900 bg-white shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-700 transition-all text-lg"
-                  required
-                />
-                <Button type="submit" variant="secondary" size="lg" className="shadow-xl whitespace-nowrap">
-                  Suscribirse
-                </Button>
-              </form>
-              <p className="text-sm text-white/60 mt-6 text-center">
-                TODO: Integrar con servicio de newsletter (Mailchimp, SendGrid, etc.)
+                <Link to="/socios">¡Quiero hacerme socio!</Link>
+              </Button>
+              <p className="text-gray-600 mt-6 text-lg">
+                ¡Te esperamos para seguir creciendo y sentirnos en casa!
               </p>
             </div>
           </div>

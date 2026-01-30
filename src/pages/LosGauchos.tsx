@@ -1,4 +1,4 @@
-import { Trophy, Calendar, Camera, Instagram, Users } from 'lucide-react';
+import { Trophy, Calendar, Camera, Instagram, Users, Shirt, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
@@ -6,10 +6,32 @@ import { siteConfig } from '../constants/siteConfig';
 import { matches } from '../data/matches';
 import { players } from '../data/players';
 import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 import { useState } from 'react';
 
 export const LosGauchos = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  // Estado y funciones para el slider de camisetas
+  const camisetaImages = [
+    '/images/camisetas/camiseta-1.jpg',
+    '/images/camisetas/camiseta-2.jpg',
+    '/images/camisetas/camiseta-3.jpg',
+    '/images/camisetas/camiseta-4.jpg',
+  ];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % camisetaImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + camisetaImages.length) % camisetaImages.length);
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
   
   const getResultColor = (result?: string) => {
     if (result === 'win') return 'success';
@@ -97,6 +119,105 @@ export const LosGauchos = () => {
             </div>
           </div>
         </div>
+
+        {/* Camiseta */}
+        <section className="mb-20 py-20 bg-white relative overflow-hidden">
+          {/* Patrón de fondo sutil */}
+          <div 
+            className="absolute inset-0 opacity-[0.02]"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}
+          ></div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <span className="text-gray-900">Camiseta</span>{' '}
+                    <span className="text-blue-600">Club Argentinos en Almería</span>
+                  </h2>
+                  <div className="h-1 w-20 bg-gradient-to-r from-sky-400 to-blue-600 mb-6"></div>
+                  <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                    Llevá los colores del club con la camiseta oficial del Club Argentinos en Almería. Camiseta oficial con los colores y el escudo del equipo.
+                  </p>
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1"><strong className="text-gray-900">Precio:</strong> A definir por la asociación</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1"><strong className="text-gray-900">Talles:</strong> A definir por la asociación</p>
+                    </div>
+                  </div>
+                  <Button
+                    onClick={() => {
+                      const message = encodeURIComponent('Hola! Me interesa comprar la camiseta del Club Argentinos en Almería. ¿Podrían darme más información?');
+                      window.open(`https://wa.me/${siteConfig.contact.whatsapp.replace('+', '')}?text=${message}`, '_blank');
+                    }}
+                    size="lg"
+                    variant="primary"
+                    className="bg-gradient-to-r from-sky-400 to-blue-500 w-full md:w-auto"
+                  >
+                    <Shirt className="mr-2 h-5 w-5" />
+                    Comprar por WhatsApp
+                  </Button>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-full max-w-sm">
+                    {/* Slider principal */}
+                    <Card className="overflow-hidden mb-4">
+                      <CardContent className="p-0 relative group">
+                        <div className="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-sky-100 relative">
+                          <img
+                            src={camisetaImages[currentImageIndex]}
+                            alt={`Camiseta Club Argentinos en Almería ${currentImageIndex + 1}`}
+                            className="w-full h-full object-contain transition-opacity duration-300"
+                          />
+                          {/* Botones de navegación */}
+                          <button
+                            onClick={prevImage}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110"
+                            aria-label="Imagen anterior"
+                          >
+                            <ChevronLeft className="h-5 w-5" />
+                          </button>
+                          <button
+                            onClick={nextImage}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110"
+                            aria-label="Siguiente imagen"
+                          >
+                            <ChevronRight className="h-5 w-5" />
+                          </button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    {/* Miniaturas */}
+                    <div className="grid grid-cols-4 gap-2">
+                      {camisetaImages.map((image, index) => (
+                        <button
+                          key={index}
+                          onClick={() => goToImage(index)}
+                          className={`aspect-square rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                            currentImageIndex === index
+                              ? 'border-blue-500 scale-105 shadow-md'
+                              : 'border-gray-200 hover:border-blue-300 hover:scale-105'
+                          }`}
+                          aria-label={`Ver imagen ${index + 1}`}
+                        >
+                          <img
+                            src={image}
+                            alt={`Miniatura camiseta ${index + 1}`}
+                            className="w-full h-full object-cover bg-gradient-to-br from-blue-50 to-sky-100"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Plantel */}
         <section className="mb-20">
@@ -195,14 +316,29 @@ export const LosGauchos = () => {
                     <div className="flex items-center gap-2 mb-4">
                       <Calendar className="h-5 w-5 text-blue-600" />
                       <p className="text-sm font-medium text-blue-600">
-                        {format(new Date(match.date), "d MMM yyyy")}
+                        {format(new Date(match.date), "EEEE d 'de' MMMM yyyy", { locale: es })}
                       </p>
                     </div>
                     <p className="font-semibold text-gray-900 mb-3 text-lg">
                       {match.home ? 'Los Gauchos' : match.opponent} vs {match.home ? match.opponent : 'Los Gauchos'}
                     </p>
-                    {match.home && (
-                      <Badge className="bg-blue-100 text-blue-700">Local</Badge>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      {match.home && (
+                        <Badge className="bg-blue-100 text-blue-700">Local</Badge>
+                      )}
+                      {!match.home && (
+                        <Badge className="bg-gray-100 text-gray-700">Visitante</Badge>
+                      )}
+                    </div>
+                    {match.time && (
+                      <p className="text-sm text-gray-600 mb-1">
+                        <strong>Hora:</strong> {match.time}
+                      </p>
+                    )}
+                    {match.venue && (
+                      <p className="text-sm text-gray-600">
+                        <strong>Cancha:</strong> {match.venue}
+                      </p>
                     )}
                   </CardContent>
                 </Card>
@@ -237,15 +373,29 @@ export const LosGauchos = () => {
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex-1">
                         <p className="text-sm text-blue-600 font-medium mb-2">
-                          {format(new Date(match.date), "d MMM yyyy")}
+                          {format(new Date(match.date), "EEEE d 'de' MMMM yyyy", { locale: es })}
                         </p>
                         <p className="font-semibold text-gray-800 mb-3">
                           {match.home ? 'Los Gauchos' : match.opponent} vs {match.home ? match.opponent : 'Los Gauchos'}
                         </p>
-                        {match.home && (
-                          <Badge variant="primary" className="bg-gradient-to-r from-blue-100 to-sky-200 text-blue-600 border border-blue-300/50">
-                            Local
-                          </Badge>
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          {match.home ? (
+                            <Badge variant="primary" className="bg-gradient-to-r from-blue-100 to-sky-200 text-blue-600 border border-blue-300/50">
+                              Local
+                            </Badge>
+                          ) : (
+                            <Badge className="bg-gray-100 text-gray-700">Visitante</Badge>
+                          )}
+                        </div>
+                        {match.time && (
+                          <p className="text-sm text-gray-600 mb-1">
+                            <strong>Hora:</strong> {match.time}
+                          </p>
+                        )}
+                        {match.venue && (
+                          <p className="text-sm text-gray-600">
+                            <strong>Cancha:</strong> {match.venue}
+                          </p>
                         )}
                       </div>
                       {match.score && (

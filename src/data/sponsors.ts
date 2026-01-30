@@ -23,8 +23,8 @@ export const sponsors: Sponsor[] = [
   },
   {
     id: '5',
-    name: 'Metrik',
-    logo: '/images/logos-sponsor/logo-metrik.png',
+    name: 'JS Agency',
+    logo: '/images/logos-sponsor/logo-jsagency.png',
   },
   {
     id: '6',
@@ -35,10 +35,5 @@ export const sponsors: Sponsor[] = [
     id: '7',
     name: 'Vulcan',
     logo: '/images/logos-sponsor/logo-vulcan.png',
-  },
-  {
-    id: '8',
-    name: 'JS Agency',
-    logo: '/images/logos-sponsor/logo-jsagency.png',
   },
 ];

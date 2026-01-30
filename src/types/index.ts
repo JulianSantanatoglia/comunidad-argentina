@@ -57,6 +57,8 @@ export interface MatchResult {
   score?: string;
   result?: 'win' | 'loss' | 'draw';
   photos?: string[];
+  time?: string;
+  venue?: string;
 }
 
 export type LawyerCategory = 'extranjeria' | 'tramites' | 'laboral' | 'familiar';
