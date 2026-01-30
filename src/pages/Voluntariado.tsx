@@ -57,7 +57,7 @@ export const Voluntariado = () => {
     <div className="py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-12">
-          <HandHeart className="h-16 w-16 text-primary-600 mx-auto mb-4" />
+          <HandHeart className="h-16 w-16 text-blue-600 mx-auto mb-4" />
           <h1 className="text-4xl font-bold mb-4">Voluntariado</h1>
           <p className="text-xl text-gray-600">
             Sumate como voluntario y ayudá a hacer crecer nuestra comunidad
@@ -122,7 +122,7 @@ export const Voluntariado = () => {
                           type="checkbox"
                           checked={formData.areas.includes(area)}
                           onChange={() => toggleArea(area)}
-                          className="h-4 w-4 text-primary-600"
+                          className="h-4 w-4 text-blue-600"
                         />
                         <span className="text-sm">{area}</span>
                       </label>
@@ -138,7 +138,7 @@ export const Voluntariado = () => {
                     value={formData.disponibilidad}
                     onChange={handleChange}
                     required
-                    className="flex h-10 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="flex h-10 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                   >
                     <option value="">Seleccionar...</option>
                     <option value="fines-semana">Fines de semana</option>

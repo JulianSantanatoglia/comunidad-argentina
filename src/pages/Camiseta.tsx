@@ -71,7 +71,7 @@ export const Camiseta = () => {
 
                 <Button onClick={handleWhatsApp} size="lg" className="w-full">
                   <ShoppingBag className="mr-2 h-5 w-5" />
-                  Comprar por WhatsApp
+                  Comprar
                 </Button>
               </CardContent>
             </Card>

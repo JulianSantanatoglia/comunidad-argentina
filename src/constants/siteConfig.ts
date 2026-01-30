@@ -1,19 +1,19 @@
 export const siteConfig = {
-  name: 'Asociación Argentinos en Almería',
+  name: 'Asociación Argentina en Almería "Somos Familia"',
   clubName: 'Los Gauchos',
-  description: 'Comunidad Argentina en Almería que promueve la cultura, el deporte y la integración',
-  president: 'Marcela Quiroga',
+  description: 'Comunidad argentina en Almería que promueve la cultura, el deporte, la solidaridad y la integración',
+  president: 'Marcela Quiroga (Presidenta)',
   contact: {
-    whatsapp: '+34611060421',
+    whatsapp: '+34 611 060 421',
     email: 'comunidadargentinaalmeria@gmail.com',
     whatsappUrl: 'https://wa.me/34611060421',
     emailUrl: 'mailto:comunidadargentinaalmeria@gmail.com',
   },
   social: {
     instagram: {
-      comunidad: 'comunidad_argentia_en_almeria',
+      comunidad: 'comunidad_argentina_en_almeria',
       club: 'clubargentinoalmeria',
-      comunidadUrl: 'https://instagram.com/comunidad_argentia_en_almeria',
+      comunidadUrl: 'https://instagram.com/comunidad_argentina_en_almeria',
       clubUrl: 'https://instagram.com/clubargentinoalmeria',
     },
     tiktok: {

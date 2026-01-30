@@ -36,4 +36,9 @@ export const sponsors: Sponsor[] = [
     name: 'Vulcan',
     logo: '/images/logos-sponsor/logo-vulcan.png',
   },
+  {
+    id: '8',
+    name: 'JS Agency',
+    logo: '/images/logos-sponsor/logo-jsagency.png',
+  },
 ];

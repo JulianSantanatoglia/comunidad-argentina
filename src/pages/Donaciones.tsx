@@ -31,7 +31,7 @@ export const Donaciones = () => {
     <div className="py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-12">
-          <Heart className="h-16 w-16 text-primary-600 mx-auto mb-4" />
+          <Heart className="h-16 w-16 text-blue-600 mx-auto mb-4" />
           <h1 className="text-4xl font-bold mb-4">Donaciones</h1>
           <p className="text-xl text-gray-600">
             Tu apoyo nos ayuda a seguir creciendo y organizando actividades para la comunidad
@@ -42,7 +42,7 @@ export const Donaciones = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <Card
             className={`cursor-pointer transition-all ${
-              donationType === 'unique' ? 'ring-2 ring-primary-600' : ''
+              donationType === 'unique' ? 'ring-2 ring-blue-600' : ''
             }`}
             onClick={() => setDonationType('unique')}
           >
@@ -56,7 +56,7 @@ export const Donaciones = () => {
 
           <Card
             className={`cursor-pointer transition-all ${
-              donationType === 'monthly' ? 'ring-2 ring-primary-600' : ''
+              donationType === 'monthly' ? 'ring-2 ring-blue-600' : ''
             }`}
             onClick={() => setDonationType('monthly')}
           >
@@ -139,7 +139,7 @@ export const Donaciones = () => {
         {/* Transparencia */}
         <div className="mb-12">
           <div className="flex items-center gap-2 mb-6">
-            <Eye className="h-6 w-6 text-primary-600" />
+            <Eye className="h-6 w-6 text-blue-600" />
             <h2 className="text-3xl font-bold">Transparencia</h2>
           </div>
           <Card>
@@ -175,7 +175,7 @@ export const Donaciones = () => {
                       </div>
                       <div className="text-right">
                         <p className={`font-bold ${
-                          record.type === 'income' ? 'text-green-600' : 'text-red-600'
+                          record.type === 'income' ? 'text-green-600' : 'text-blue-600'
                         }`}>
                           {record.type === 'income' ? '+' : '-'}
                           {record.amount} EUR
@@ -190,7 +190,7 @@ export const Donaciones = () => {
         </div>
 
         {/* Información adicional */}
-        <Card className="bg-primary-50 border-primary-200">
+        <Card className="bg-blue-50 border-blue-200">
           <CardContent className="pt-6">
             <h3 className="font-semibold mb-2">¿Cómo se utilizan las donaciones?</h3>
             <p className="text-gray-700 text-sm mb-4">

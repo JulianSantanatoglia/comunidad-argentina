@@ -72,7 +72,7 @@ export const Abogado = () => {
     <div className="py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-12">
-          <Scale className="h-16 w-16 text-primary-600 mx-auto mb-4" />
+          <Scale className="h-16 w-16 text-blue-600 mx-auto mb-4" />
           <h1 className="text-4xl font-bold mb-4">Asesoramiento Legal</h1>
           <p className="text-xl text-gray-600">
             Consultas legales especializadas para la comunidad argentina en Almería
@@ -169,7 +169,7 @@ export const Abogado = () => {
                     value={formData.category}
                     onChange={handleChange}
                     required
-                    className="flex h-10 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="flex h-10 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                   >
                     <option value="">Seleccionar...</option>
                     {categories.map((cat) => (
@@ -190,7 +190,7 @@ export const Abogado = () => {
                         value="online"
                         checked={formData.modality === 'online'}
                         onChange={handleChange}
-                        className="h-4 w-4 text-primary-600"
+                        className="h-4 w-4 text-blue-600"
                       />
                       <Video className="h-4 w-4" />
                       <span>Online</span>
@@ -202,7 +202,7 @@ export const Abogado = () => {
                         value="presencial"
                         checked={formData.modality === 'presencial'}
                         onChange={handleChange}
-                        className="h-4 w-4 text-primary-600"
+                        className="h-4 w-4 text-blue-600"
                       />
                       <MapPin className="h-4 w-4" />
                       <span>Presencial</span>
@@ -218,7 +218,7 @@ export const Abogado = () => {
                     value={formData.urgency}
                     onChange={handleChange}
                     required
-                    className="flex h-10 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    className="flex h-10 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                   >
                     <option value="low">Baja</option>
                     <option value="medium">Media</option>

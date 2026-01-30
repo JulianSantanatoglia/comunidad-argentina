@@ -42,6 +42,16 @@ export const Contacto = () => {
           </p>
         </div>
 
+        <div className="mb-8">
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <p className="text-lg font-semibold text-gray-900 mb-2">Contacto Principal</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* WhatsApp */}
           <Card>
@@ -65,7 +75,7 @@ export const Contacto = () => {
           {/* Email */}
           <Card>
             <CardHeader>
-              <Mail className="h-10 w-10 text-primary-600 mb-4" />
+              <Mail className="h-10 w-10 text-blue-600 mb-4" />
               <CardTitle>Email</CardTitle>
             </CardHeader>
             <CardContent>
@@ -90,9 +100,9 @@ export const Contacto = () => {
             <Card>
               <CardContent className="pt-6">
                 <div className="text-center">
-                  <Instagram className="h-10 w-10 text-pink-600 mx-auto mb-4" />
+                  <Instagram className="h-10 w-10 text-blue-600 mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Instagram Comunidad</h3>
-                  <p className="text-sm text-gray-600 mb-4">@comunidad_argentia_en_almeria</p>
+                  <p className="text-sm text-gray-600 mb-4">@comunidad_argentina_en_almeria</p>
                   <Button
                     asChild
                     variant="outline"
@@ -110,7 +120,7 @@ export const Contacto = () => {
             <Card>
               <CardContent className="pt-6">
                 <div className="text-center">
-                  <Instagram className="h-10 w-10 text-pink-600 mx-auto mb-4" />
+                  <Instagram className="h-10 w-10 text-blue-600 mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Instagram Club</h3>
                   <p className="text-sm text-gray-600 mb-4">@clubargentinoalmeria</p>
                   <Button

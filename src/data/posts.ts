@@ -3,12 +3,12 @@ import type { Post } from '../types';
 export const posts: Post[] = [
   {
     id: '1',
-    title: 'Bienvenidos a la Asociación Argentinos en Almería',
+    title: 'Bienvenidos a la Asociación Argentina en Almería "Somos Familia"',
     slug: 'bienvenidos-asociacion',
     date: '2024-01-15',
     excerpt: 'Te damos la bienvenida a nuestra comunidad. Conocé quiénes somos y qué hacemos.',
     content: `
-      <p>Bienvenidos a la Asociación Argentinos en Almería. Somos una comunidad que busca promover la cultura argentina, el deporte y la integración en Almería.</p>
+      <p>Bienvenidos a la Asociación Argentina en Almería "Somos Familia". Somos una comunidad que busca promover la cultura argentina, el deporte y la integración en Almería.</p>
       <p>Nuestra misión es crear un espacio donde los argentinos en Almería puedan encontrarse, compartir experiencias y apoyarse mutuamente.</p>
       <p>Te invitamos a formar parte de nuestra comunidad.</p>
     `,

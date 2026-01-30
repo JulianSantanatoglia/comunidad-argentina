@@ -36,7 +36,7 @@ export const Sponsors = () => {
     <div className="py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <Building2 className="h-16 w-16 text-primary-600 mx-auto mb-4" />
+          <Building2 className="h-16 w-16 text-blue-600 mx-auto mb-4" />
           <h1 className="text-4xl font-bold mb-4">Sponsors</h1>
           <p className="text-xl text-gray-600">
             Empresas y organizaciones que apoyan nuestra comunidad
@@ -76,15 +76,15 @@ export const Sponsors = () => {
                 <h3 className="font-semibold mb-2">Beneficios de ser sponsor</h3>
                 <ul className="space-y-2 text-gray-700 text-sm">
                   <li className="flex items-start gap-2">
-                    <Heart className="h-5 w-5 text-primary-600 mt-0.5" />
+                    <Heart className="h-5 w-5 text-blue-600 mt-0.5" />
                     <span>Visibilidad en nuestra web y redes sociales</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Heart className="h-5 w-5 text-primary-600 mt-0.5" />
+                    <Heart className="h-5 w-5 text-blue-600 mt-0.5" />
                     <span>Presencia en eventos y actividades</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <Heart className="h-5 w-5 text-primary-600 mt-0.5" />
+                    <Heart className="h-5 w-5 text-blue-600 mt-0.5" />
                     <span>Apoyo a una causa comunitaria</span>
                   </li>
                 </ul>

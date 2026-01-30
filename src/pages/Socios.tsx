@@ -79,11 +79,11 @@ export const Socios = () => {
 
         {/* Cuota */}
         <div className="mb-12">
-          <Card className="bg-primary-50 border-primary-200">
+          <Card className="bg-blue-50 border-blue-200">
             <CardHeader>
               <CardTitle>Cuota Anual</CardTitle>
               <CardDescription>
-                La cuota anual es de <strong className="text-primary-700">{siteConfig.membership.annualFee} EUR</strong>
+                La cuota anual es de <strong className="text-blue-600">{siteConfig.membership.annualFee} EUR</strong>
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -194,15 +194,15 @@ export const Socios = () => {
                   <h3 className="font-semibold mb-4">Pasos siguientes:</h3>
                   <ol className="text-left space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
-                      <span className="font-bold text-primary-600">1.</span>
+                      <span className="font-bold text-blue-600">1.</span>
                       <span>Realizá el pago de la cuota anual de {siteConfig.membership.annualFee} EUR</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="font-bold text-primary-600">2.</span>
+                      <span className="font-bold text-blue-600">2.</span>
                       <span>Podés pagar por Bizum o en efectivo</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="font-bold text-primary-600">3.</span>
+                      <span className="font-bold text-blue-600">3.</span>
                       <span>Una vez confirmado el pago, recibirás tu número de socio y carnet digital</span>
                     </li>
                   </ol>
@@ -231,7 +231,7 @@ export const Socios = () => {
             <CardContent className="space-y-4">
               <div>
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <Smartphone className="h-5 w-5 text-primary-600" />
+                  <Smartphone className="h-5 w-5 text-blue-600" />
                   Bizum
                 </h3>
                 <p className="text-sm text-gray-600">
@@ -243,7 +243,7 @@ export const Socios = () => {
               </div>
               <div>
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <CreditCard className="h-5 w-5 text-primary-600" />
+                  <CreditCard className="h-5 w-5 text-blue-600" />
                   Efectivo
                 </h3>
                 <p className="text-sm text-gray-600">

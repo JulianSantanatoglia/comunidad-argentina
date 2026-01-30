@@ -4,7 +4,7 @@ export const matches: MatchResult[] = [
   {
     id: '1',
     date: '2024-02-10',
-    opponent: 'Equipo Local',
+    opponent: 'Los gauchos vs PUMAS CF',
     home: true,
     score: '2-1',
     result: 'win',
