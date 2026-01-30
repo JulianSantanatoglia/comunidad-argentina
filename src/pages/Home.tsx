@@ -14,7 +14,7 @@ const useTypewriter = (text: string, speed: number = 50, startDelay: number = 0)
 
   useEffect(() => {
     let currentIndex = 0;
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout>;
     setDisplayedText('');
     setIsComplete(false);
 
@@ -110,14 +110,13 @@ export const Home = () => {
     } else {
       // Ya pasamos la parte destacada
       const highlighted = highlightText;
-      const after = titleText.substring(highlightIndex + highlightText.length);
       return (
         <span>
           {beforeHighlight}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-blue-400">
             {highlighted}
           </span>
-          {after}
+          {afterHighlight}
         </span>
       );
     }
